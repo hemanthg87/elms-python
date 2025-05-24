@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Dashboard</title>
+</head>
+<body>
+    <h2>Welcome, {{ username }}! You are logged in as Student.</h2>
+    <a href="{{ url_for('view_courses') }}">View Courses</a><br>
+    <a href="{{ url_for('view_assignments') }}">View Assignments</a><br>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>

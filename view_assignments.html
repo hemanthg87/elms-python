@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assignments</title>
+</head>
+<body>
+    <h1>Available Assignments</h1>
+    {% if assignments %}
+        <ul>
+            {% for assignment in assignments %}
+                <li>
+                    <strong>Course:</strong> {{ assignment[0] }} <br>
+                    <strong>Question:</strong> {{ assignment[1] }} <br>
+                    <strong>Due Date:</strong> {{ assignment[2] }} <br><br>
+                    <a href="{{ url_for('submit_assignment_form') }}">Submit Answer</a>
+                </li>
+                <hr>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No assignments available at the moment.</p>
+    {% endif %}
+    <a href="{{ url_for('student_dashboard') }}">Back to Dashboard</a>
+</body>
+</html>

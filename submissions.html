@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submissions</title>
+</head>
+<body>
+    <h2>Student Submissions</h2>
+    <ul>
+        {% for submission in submissions %}
+            <li>
+                <strong>Student:</strong> {{ submission[1] }}<br>
+                <strong>Answer:</strong> {{ submission[2] }}<br>
+                <form method="POST">
+                    <input type="hidden" name="submission_id" value="{{ submission[0] }}">
+                    <label>Grade:</label>
+                    <input type="text" name="grade" value="{{ submission[3] }}"><br>
+                    <label>Feedback:</label><br>
+                    <textarea name="feedback">{{ submission[4] }}</textarea><br>
+                    <button type="submit">Submit Feedback</button>
+                </form>
+            </li>
+            <hr>
+        {% else %}
+            <li>No submissions yet.</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('faculty_dashboard') }}">Back to Dashboard</a>
+</body>
+</html>

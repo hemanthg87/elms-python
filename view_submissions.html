@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Submissions</title>
+</head>
+<body>
+    <h2>Submissions</h2>
+
+    {% if submissions %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Student</th>
+                    <th>Assignment</th>
+                    <th>Answer</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for submission in submissions %}
+                    <tr>
+                        <td>{{ submission[1] }}</td>  <!-- Student's username -->
+                        <td>{{ submission[2] }}</td>  <!-- Assignment question -->
+                        <td>{{ submission[3] }}</td>  <!-- Answer -->
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No submissions found.</p>
+    {% endif %}
+
+    <br>
+    <a href="{{ url_for('faculty_dashboard') }}">Back to Dashboard</a>
+</body>
+</html>

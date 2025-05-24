@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Faculty Dashboard</title>
+</head>
+<body>
+    <h2>Welcome, {{ username }}! You are logged in as Faculty.</h2>
+    <a href="{{ url_for('create_course') }}">Create Course</a><br>
+    <a href="{{ url_for('view_courses') }}">View Courses</a><br>
+    <a href="{{ url_for('create_assignment') }}">Create Assignment</a><br>
+    <a href="{{ url_for('view_submissions') }}">View Submissions</a><br>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>

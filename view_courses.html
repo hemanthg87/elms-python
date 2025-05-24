@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Courses</title>
+</head>
+<body>
+    <h2>Courses</h2>
+    <ul>
+        {% for course in courses %}
+            <li><strong>{{ course[1] }}</strong>: {{ course[2] }}<br>{{ course[3] }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

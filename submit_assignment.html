@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submit Assignment</title>
+</head>
+<body>
+    <h1>Submit Your Assignment</h1>
+    <form method="post">
+        <label for="assignment_id">Select Assignment:</label>
+        <select name="assignment_id" required>
+            {% for assignment in assignments %}
+                <option value="{{ assignment[0] }}">{{ assignment[1] }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="answer">Your Answer:</label><br>
+        <textarea name="answer" rows="5" cols="50" required></textarea><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+    <a href="{{ url_for('view_assignments') }}">Back to Assignments</a>
+</body>
+</html>
